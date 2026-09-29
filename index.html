@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Filter Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="page-title">Product Filter Dashboard</h1>
+      <p class="tagline">Search, filter and explore</p>
+      <button id="theme-toggle">☀️</button>
+    </header>
+    <main id="main_container">
+      <section class="main-section">
+        <input
+          type="text"
+          name="search-input"
+          id="input"
+          placeholder="Search here..."
+        />
+        <button type="button" class="search-btn btn">Search</button>
+        <!-- Category dropdown -->
+        <select name="category" id="category-Menu">
+          <option value="default">All Categories</option>
+        </select>
+        <!-- product sort dropdown -->
+        <select name="sort" id="sort-Menu">
+          <option value="default">Default</option>
+          <option value="priceLH">Price: Low to High</option>
+          <option value="priceHL">Price: High to Low</option>
+          <option value="ratingHL">Rating: High to Low</option>
+          <option value="nameAsc">Name: A to Z</option>
+          <option value="nameDesc">Name: Z to A</option>
+        </select>
+        <!-- sort by price range -->
+        <select name="price" id="priceFilter">
+          <option value="all">All Prices</option>
+          <option value="0-500">₹0 - ₹500</option>
+          <option value="500-1000">₹500 - ₹1,000</option>
+          <option value="1000-2000">₹1,000 - ₹2,000</option>
+          <option value="2000-5000">₹2,000 - ₹5000</option>
+          <option value="5000-10000">₹5,000 - ₹10,000</option>
+          <option value="10000+">₹10,000+</option>
+        </select>
+        <button id="reset-btn">Reset Filters</button>
+      </section>
+      <section class="products-container">
+        <div class="product-container"></div>
+        <div class="result-container"></div>
+      </section>
+    </main>
+    <!-- Js here -->
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

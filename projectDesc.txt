@@ -1,0 +1,362 @@
+PRODUCT FILTER DASHBOARD
+
+Purpose
+
+A Vanilla JavaScript project to revise and practice frontend concepts
+properly. We will build it step-by-step, one concept at a time.
+
+Tech
+
+-   HTML
+-   CSS
+-   Vanilla JavaScript
+-   DOM
+-   Events
+-   Array methods
+-   localStorage
+-   Fetch API
+-   Async JavaScript
+-   Error handling
+
+IMPORTANT LEARNING RULE
+
+Do not jump straight to full solutions. For each feature: 1. Understand
+the requirement. 2. Decide the approach. 3. Write the code yourself. 4.
+Test it. 5. Fix mistakes. 6. Then move to the next concept.
+
+PROJECT FEATURES
+
+1. PRODUCT DATA
+
+Create a product array containing objects.
+
+Each product should have: - id - name - category - price - rating -
+image (optional)
+
+Example categories: - Electronics - Clothing - Shoes - Books -
+Accessories
+
+Example products: - iPhone 15 - Samsung Galaxy - Laptop - Headphones -
+T-Shirt - Jeans - Running Shoes - Java Book - Backpack - Smart Watch
+
+2. PRODUCT RENDERING
+
+Render products dynamically into the DOM.
+
+Practice: - querySelector - createElement / innerHTML - map() - template
+literals - append/render - clearing old products before rendering
+
+Goal: Understand how JavaScript takes data and creates UI.
+
+3. SEARCH
+
+Add a search input.
+
+Requirement: When the user types: “phone”
+
+Only products whose name contains “phone” should remain.
+
+Important: - Search should be case-insensitive. - Use includes(). - Do
+not modify the original product array.
+
+Practice: - input event - value - trim() - toLowerCase() - filter()
+
+4. CATEGORY DROPDOWN
+
+Add a category dropdown.
+
+Dropdown options:
+
+-   All Categories
+-   Electronics
+-   Clothing
+-   Shoes
+-   Books
+-   Accessories
+
+Behavior: - “All Categories” shows every product. - Selecting a category
+shows only products from that category.
+
+The dropdown should ideally be generated from the available category
+data rather than hardcoding duplicate values later.
+
+Practice: - change event - select.value - filter()
+
+5. COMBINED SEARCH + CATEGORY FILTER
+
+Search and category filtering must work together.
+
+Example: Search = “phone” Category = Electronics
+
+Result: Only electronics products whose name contains “phone”.
+
+Important idea: Do NOT create separate unrelated render systems.
+
+Use one filtering pipeline.
+
+Concept: products -> search filter -> category filter -> sorting ->
+price filter -> render
+
+6. SORTING
+
+Add a sort dropdown.
+
+Options:
+
+-   Default
+-   Price: Low to High
+-   Price: High to Low
+-   Rating: High to Low
+-   Name: A to Z
+-   Name: Z to A
+
+Important: Sorting should happen after filtering.
+
+Practice: - sort() - comparison function - numbers vs strings - avoiding
+accidental mutation of original data
+
+7. PRICE FILTER
+
+Add a price filter.
+
+Possible UI: - Minimum price input - Maximum price input
+
+Example: Min = 500 Max = 2000
+
+Only products between those values should be shown.
+
+Handle: - empty min - empty max - both empty - minimum greater than
+maximum
+
+8. EMPTY STATE
+
+If no products match the current filters, do not leave a blank area.
+
+Show something like:
+
+“No products found.”
+
+Example: Search = “xyzabc”
+
+Result: No products found.
+
+9. PRODUCT COUNT
+
+Show the number of currently visible products.
+
+Examples:
+
+“10 products” “3 products” “No products”
+
+The count should update whenever filters or sorting change.
+
+10. RESET FILTERS
+
+Add a Reset button.
+
+When clicked: - Search becomes empty. - Category becomes All
+Categories. - Sort becomes Default. - Min price becomes empty. - Max
+price becomes empty. - All products are shown again.
+
+11. LOCALSTORAGE
+
+Persist useful user state using localStorage.
+
+Possible things to store: - selected filters - search text - selected
+category - selected sorting option - price range
+
+On page reload: Restore the previous filter state.
+
+Practice: - localStorage.setItem() - localStorage.getItem() -
+JSON.stringify() - JSON.parse() - use of localStorage safely
+
+12. FAVORITES / WISHLIST (OPTIONAL EXTENSION)
+
+Add a favorite button to each product.
+
+Requirements: - User can favorite/unfavorite products. - Favorites
+survive page reload. - Store favorite product IDs in localStorage.
+
+Practice: - event handling - data attributes - array methods -
+localStorage - state synchronization
+
+13. FETCH API
+
+Replace the local product array later with API data.
+
+Flow:
+
+fetch() -> response -> response.json() -> products -> render()
+
+Practice: - fetch() - Promise - then() - async/await - response.ok
+
+14. LOADING STATE
+
+While products are being fetched, show:
+
+“Loading products…”
+
+After successful fetch: Hide loading message and render products.
+
+15. ERROR HANDLING
+
+If the API request fails:
+
+Show:
+
+“Failed to load products. Please try again.”
+
+Practice: - try/catch - response.ok - network errors - user-friendly
+error messages
+
+16. RETRY
+
+Add a Retry button when API loading fails.
+
+Clicking Retry should attempt the fetch again.
+
+17. EVENT DELEGATION
+
+If product cards contain buttons such as: - Favorite - Add to cart -
+View details
+
+Practice event delegation instead of attaching unnecessary listeners to
+every button.
+
+Learn: - event.target - closest() - data-id - bubbling
+
+18. PRODUCT DETAILS
+
+Optional feature.
+
+Clicking a product can show: - name - price - category - rating -
+description - image
+
+Can be implemented using: - modal OR - details section
+
+19. CART (OPTIONAL EXTENSION)
+
+Add: - Add to Cart - quantity - remove - total price
+
+Persist cart using localStorage.
+
+This is an extension and should NOT be done until the filtering
+dashboard itself is solid.
+
+FINAL PROJECT FLOW
+
+DATA | v RENDER PRODUCTS | v SEARCH | v CATEGORY FILTER | v PRICE FILTER
+| v SORT | v EMPTY STATE + COUNT | v RENDER
+
+CORE JAVASCRIPT CONCEPTS TO PRACTICE
+
+-   Variables
+-   Objects
+-   Arrays
+-   Functions
+-   Arrow functions
+-   Template literals
+-   DOM selection
+-   DOM manipulation
+-   Events
+-   input event
+-   change event
+-   click event
+-   filter()
+-   map()
+-   find()
+-   some()
+-   includes()
+-   sort()
+-   reduce() where useful
+-   destructuring
+-   spread operator
+-   state
+-   localStorage
+-   JSON
+-   fetch()
+-   Promises
+-   async/await
+-   try/catch
+-   event bubbling
+-   event delegation
+
+INTERVIEW-RELEVANT QUESTIONS
+
+After completing the project, practice questions such as:
+
+1.  Why use filter() instead of modifying the original array?
+2.  What does includes() return?
+3.  Why convert search text to lowercase?
+4.  What happens when an input event fires?
+5.  Difference between input and change events?
+6.  Why should filtering and rendering be separate functions?
+7.  Does sort() mutate an array?
+8.  How can you avoid mutating the original product array while sorting?
+9.  What happens if filter() returns an empty array?
+10. How does localStorage store data?
+11. Why do we use JSON.stringify()?
+12. Why do we use JSON.parse()?
+13. What does fetch() return?
+14. Why do we check response.ok?
+15. Difference between Promise and async/await?
+16. How does try/catch work with async/await?
+17. What is event bubbling?
+18. What is event delegation?
+19. Why use data-id on product elements?
+20. How would you optimize filtering for a very large product list?
+
+IMPLEMENTATION ORDER
+
+Phase 1: - Product data - Product rendering - Search
+
+Phase 2: - Category dropdown - Combined search + category filtering
+
+Phase 3: - Sorting - Price filtering - Product count - Empty state -
+Reset
+
+Phase 4: - localStorage
+
+Phase 5: - Fetch API - Loading state - Error handling - Retry
+category
+:
+"men's clothing"
+description
+:
+"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
+id
+:
+1
+image
+:
+"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
+price
+:
+109.95
+rating
+:
+{rate: 3.9, count: 120}
+title
+:
+"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+[[Prototype]]
+:
+Object
+Phase 6: - Event delegation - Optional favorites - Optional product
+details - Optional cart
+
+Phase 7: - Interview-style review - Debugging tasks - Small feature
+changes - Explain-your-code questions
+
+CURRENT POSITION
+
+We are currently entering the filtering part of the project.
+
+Immediate task: SEARCH
+
+Then: CATEGORY DROPDOWN
+
+Category dropdown values: 1. All Categories 2. Electronics 3. Clothing
+4. Shoes 5. Books 6. Accessories
+
+Do one feature at a time. Do not skip ahead.
