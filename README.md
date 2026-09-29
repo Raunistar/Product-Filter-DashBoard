@@ -8,9 +8,9 @@ The project focuses on practical frontend skills such as **DOM manipulation, arr
 
 ## 🚀 Live Demo
 
-**Live:** `Add your Netlify/Vercel URL here`
+**Live:** `[Add your Netlify/Vercel URL here](https://product-filter-dashboard.netlify.app/)`
 
-**GitHub:** `Add your GitHub repository URL here`
+**GitHub:** `[Add your GitHub repository URL here](https://github.com/Raunistar/Product-Filter-DashBoard)`
 
 ---
 
